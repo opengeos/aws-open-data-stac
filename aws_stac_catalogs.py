@@ -31,6 +31,9 @@ for file in files:
     with open(file, "r") as f:
         dataset = yaml.safe_load(f)
 
+        if "Deprecated" in dataset:
+            continue
+
         tags = dataset.get("Tags", [])
         name = dataset.get("Name", "")
 
@@ -59,10 +62,8 @@ for file in files:
 
                     item = {}
 
-                    resource["Description"] = (
-                        resource["Description"]
-                        .replace(",", "")
-                        .replace("Water Observations from Space ", "")
+                    resource["Description"] = resource["Description"].replace(
+                        "Water Observations from Space ", ""
                     )
 
                     if names[name] > 1:
@@ -72,12 +73,7 @@ for file in files:
                     else:
                         item["Name"] = name
 
-                    item["Name"] = (
-                        item["Name"]
-                        .replace("/", "-")
-                        .replace("-  -", "-")
-                        .replace(",", "")
-                    )
+                    item["Name"] = item["Name"].replace("/", "-").replace("-  -", "-")
 
                     item["Endpoint"] = url
 
@@ -91,5 +87,5 @@ print(f"Total number of STAC datasets: {len(datasets)}")
 
 df = pd.DataFrame(datasets)
 df = df.sort_values(by="Name")
-df.to_csv("aws_stac_catalogs.csv", index=False)
+df.to_csv("aws_stac_catalogs.tsv", index=False, sep="\t")
 df.to_json("aws_stac_catalogs.json", orient="records", indent=4)
