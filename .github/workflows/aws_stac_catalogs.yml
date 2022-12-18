@@ -2,7 +2,7 @@ name: aws_catalog
 on:
   workflow_dispatch:
   schedule:
-    - cron: "25 3 * * *"
+    - cron: "25 3 * * *" # https://crontab.guru/
 
 jobs:
   build:
@@ -36,7 +36,7 @@ jobs:
           git pull origin master
       - name: push changes
         continue-on-error: true
-        uses: ad-m/github-push-action@v0.6.0
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: master
