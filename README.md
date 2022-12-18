@@ -25,5 +25,5 @@ df.head()
 
 ## Related Projects
 
-- A list of open datasets on AWS: [aws-open-data ](https://github.com/giswqs/aws-open-data)
+- A list of open datasets on AWS: [aws-open-data](https://github.com/giswqs/aws-open-data)
 - A list of open geospatial datasets on AWS: [aws-open-data-geo](https://github.com/giswqs/aws-open-data-geo)
