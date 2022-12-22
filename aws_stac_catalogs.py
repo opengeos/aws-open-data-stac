@@ -1,3 +1,4 @@
+import json
 import os
 import shutil
 import yaml
@@ -88,4 +89,8 @@ print(f"Total number of STAC datasets: {len(datasets)}")
 df = pd.DataFrame(datasets)
 df = df.sort_values(by="Name")
 df.to_csv("aws_stac_catalogs.tsv", index=False, sep="\t")
-df.to_json("aws_stac_catalogs.json", orient="records", indent=4)
+
+data = json.loads(df.to_json(orient="records"))
+
+with open("aws_stac_catalogs.json", "w") as f:
+    json.dump(data, f, indent=4)
