@@ -19,7 +19,7 @@
     },
     {
         "Name": "Amazonia EO satellite on AWS",
-        "Endpoint": "https://stac.amskepler.com/v100",
+        "Endpoint": "https://stac.scitekno.com.br/v100",
         "Description": "Amazonia 1 imagery (COG files, quicklooks, metadata)",
         "ARN": "arn:aws:s3:::brazil-eosats",
         "Region": "us-west-2",
@@ -55,7 +55,7 @@
     },
     {
         "Name": "CBERS on AWS",
-        "Endpoint": "https://stac.amskepler.com/v100",
+        "Endpoint": "https://stac.scitekno.com.br/v100",
         "Description": "CBERS imagery (COG files, quicklooks, metadata)",
         "ARN": "arn:aws:s3:::brazil-eosats",
         "Region": "us-west-2",
@@ -68,6 +68,15 @@
         "Description": "Capella Space Open Data in COG format",
         "ARN": "arn:aws:s3:::capella-open-data/data/",
         "Region": "us-west-2",
+        "Type": "S3 Bucket",
+        "RequesterPays": false
+    },
+    {
+        "Name": "DE Africa Waterbodies Monitoring Service",
+        "Endpoint": "https://explorer.digitalearth.africa/stac/collections/waterbodies",
+        "Description": "DE Africa Waterbodies",
+        "ARN": "arn:aws:s3:::deafrica-services/waterbodies",
+        "Region": "af-south-1",
         "Type": "S3 Bucket",
         "RequesterPays": false
     },
@@ -432,6 +441,24 @@
         "RequesterPays": null
     },
     {
+        "Name": "NOAA Coastal Lidar Data",
+        "Endpoint": "https://noaa-nos-coastal-lidar-pds.s3.us-east-1.amazonaws.com/entwine/stac/catalog.json",
+        "Description": "NOAA Coastal Lidar Dataset",
+        "ARN": "arn:aws:s3:::noaa-nos-coastal-lidar-pds",
+        "Region": "us-east-1",
+        "Type": "S3 Bucket",
+        "RequesterPays": null
+    },
+    {
+        "Name": "NOAA Unified Forecast System (UFS) Coastal Model",
+        "Endpoint": "https://noaa-ufs-coastal-pds.s3.amazonaws.com/index.html",
+        "Description": "NOAA UFS Coastal Data",
+        "ARN": "arn:aws:s3:::noaa-ufs-coastal-pds",
+        "Region": "us-east-1",
+        "Type": "S3 Bucket",
+        "RequesterPays": null
+    },
+    {
         "Name": "RCM CEOS Analysis Ready Data | Donn\u00e9es pr\u00eates \u00e0 l'analyse du CEOS pour le MCR",
         "Endpoint": "https://www.eodms-sgdot.nrcan-rncan.gc.ca/stac/collections/rcm-ard/items/",
         "Description": "RCM CEOS Analysis Ready Data. Donn\u00e9es pr\u00eates \u00e0 l'analyse (DPA) du CEOS pour le MCR",
@@ -457,6 +484,15 @@
         "Region": "us-west-2",
         "Type": "S3 Bucket",
         "RequesterPays": null
+    },
+    {
+        "Name": "Satellogic EarthView dataset",
+        "Endpoint": "https://satellogic-earthview.s3.us-west-2.amazonaws.com/stac/catalog.json",
+        "Description": "Satellogic data includes TOA RGBN COG, VISUAL RGB COG files data and metadata",
+        "ARN": "arn:aws:s3:::satellogic-earthview",
+        "Region": "us-west-2",
+        "Type": "S3 Bucket",
+        "RequesterPays": false
     },
     {
         "Name": "Sentinel Near Real-time Canada Mirror | Miroir Sentinel temps quasi r\u00e9el du Canada",
