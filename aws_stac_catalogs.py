@@ -66,7 +66,13 @@ for file in files:
                     resource["Description"] = resource["Description"].replace(
                         "Water Observations from Space ", ""
                     )
-
+                    resource["Description"] = resource["Description"].replace(
+                        "",
+                        "",
+                    )
+                    resource["Description"] = resource["Description"].replace(
+                        "Scenes and metadata for ", ""
+                    )
                     if names[name] > 1:
                         item["Name"] = (
                             f"{name} - {resource['Description'].replace(name, '')}"
@@ -77,6 +83,12 @@ for file in files:
                     item["Name"] = item["Name"].replace("/", "-").replace("-  -", "-")
                     item["Name"] = item["Name"].split(".")[0]
                     item["Name"] = item["Name"].split(",")[0]
+                    item["Name"] = item["Name"].split("|")[0]
+                    item["Name"] = item["Name"].replace("JAXA - USGS - ", "")
+                    item["Name"] = item["Name"].replace(
+                        "ESA WorldCover Sentinel-1 and Sentinel-2 10m Annual Composites - ",
+                        "",
+                    )
 
                     item["Endpoint"] = url
 
