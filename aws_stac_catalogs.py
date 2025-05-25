@@ -68,13 +68,15 @@ for file in files:
                     )
 
                     if names[name] > 1:
-                        item[
-                            "Name"
-                        ] = f"{name} - {resource['Description'].replace(name, '')}"
+                        item["Name"] = (
+                            f"{name} - {resource['Description'].replace(name, '')}"
+                        )
                     else:
                         item["Name"] = name
 
                     item["Name"] = item["Name"].replace("/", "-").replace("-  -", "-")
+                    item["Name"] = item["Name"].split(".")[0]
+                    item["Name"] = item["Name"].split(",")[0]
 
                     item["Endpoint"] = url
 
